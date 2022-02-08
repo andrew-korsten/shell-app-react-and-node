@@ -14,7 +14,7 @@ const port = process.env.PORT || 5000;
 if(process.env.NODE_ENV === 'production') {
     // A7. npm run build - to build the react app
     // A8. serve the static version from build
-    app.use(express.static(build))
+    app.use(express.static('build'))
     // A9. get the index.html file (end of A)
     app.get('*', (req, res) => {
         res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
